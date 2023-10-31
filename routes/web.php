@@ -14,7 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return "Hello from laravel";
+    $quizName = "test";
+    $photo = "https://media.istockphoto.com/id/1332502196/vector/quiz-in-comic-pop-art-style-quiz-brainy-game-word-vector-illustration-design.jpg?s=612x612&w=0&k=20&c=q0dfOCpzcSMf6ZKbFKYYHEcocNMzz57nvHoD8xBf3UU=";
+    $status = "active";
+    $data = [
+        ["quizName" => $quizName,
+        "photo" => $photo,
+        "status" => $status],
+    ];
+    return view("home", compact('data'));
 });
 
 Route::get("/name", function(){
